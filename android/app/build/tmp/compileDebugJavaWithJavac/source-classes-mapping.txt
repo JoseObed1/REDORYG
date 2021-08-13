@@ -1,0 +1,14 @@
+com/redoryg/ReactNativeFlipper.java
+ com.redoryg.ReactNativeFlipper
+ com.redoryg.ReactNativeFlipper$1
+ com.redoryg.ReactNativeFlipper$2
+ com.redoryg.ReactNativeFlipper$2$1
+com/redoryg/MainActivity.java
+ com.redoryg.MainActivity
+com/redoryg/MainApplication.java
+ com.redoryg.MainApplication
+ com.redoryg.MainApplication$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/redoryg/BuildConfig.java
+ com.redoryg.BuildConfig
