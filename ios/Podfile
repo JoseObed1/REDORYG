@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'REDORYG' do
+target 'REDORYG2' do
   config = use_native_modules!
 
   use_react_native!(
@@ -12,7 +12,7 @@ target 'REDORYG' do
     :hermes_enabled => false
   )
 
-  target 'REDORYGTests' do
+  target 'REDORYG2Tests' do
     inherit! :complete
     # Pods for testing
   end
