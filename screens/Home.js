@@ -13,8 +13,8 @@ const Home = ({navigation})=> {
             <ScrollView
             contentInsetAdjustmentBehavior="automatic">      
               <View>          
-                <Text style={styles.titulo}><Image source={require('../images/logo.png')}style={{width:40,height:40}}></Image>
-                  REDORYG
+                <Text style={styles.titulo}><Image source={require('../images/logo2.png')}style={{width:30,height:30}}></Image>
+                  EDORYG
                 </Text>
               </View>      
                 <View>
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   button:{
-    width:310,
+    flex:1,
     height: 30,
     alignItems: 'center',
     alignContent:'center',

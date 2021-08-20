@@ -78,8 +78,7 @@ class ExampleApp extends PureComponent {
       margin: 20,
     },
     button:{
-        flex: 0,
-        width:310,
+        flex: 1,
         height: 30,
         alignItems: 'center',
         alignContent:'center',
