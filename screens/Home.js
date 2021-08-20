@@ -1,5 +1,5 @@
 import React from 'react'
-import {View,Button,Text, SafeAreaView, ScrollView, StyleSheet, Alert} from 'react-native'
+import {View,Button,Text, SafeAreaView, ScrollView, StyleSheet, Alert, ImageBackground} from 'react-native'
 
 const Separator = () => (
    <View style={styles.separator} />
@@ -8,31 +8,45 @@ const Separator = () => (
 const Home = ({navigation})=> {
     return(
         <SafeAreaView style={styles.container} >
-             <ScrollView
+            <ScrollView
             contentInsetAdjustmentBehavior="automatic">
 
-            <View>
-                <Text style={styles.title}>
-                    A traves de esta opcion su rostro puede ser detectado y reconocido, siempre y cuando este se encuentre en la BD de la app.
-                </Text>
-                <Button
-                    title="Reconocimiento Facial"
-                    color= "#008080"
-                    onPress={() => navigation.navigate('RostroRec')}
-                />
-            </View>
-            <Separator />
-            <View>
-                <Text style={styles.title}>
-                Deteccion de diferentes gestos con la mano, descubrelos tu mismo.
-                </Text>
-                <Button
-                    title="Reconocimiento De Gestos"
-                    color= "#008080"
-                    onPress={() => navigation.navigate('GestoRec')}
-                />
-            </View>
-            <Separator />
+              <ImageBackground style={{flex:1}} source={{url:'https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnJpZ2h0JTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80'}} >
+
+                <View>
+                    <Text style={styles.title}>
+                      Registra tu rostro para que el app pueda detectar y reconocerlo.
+                    </Text>
+                    <Button
+                        title="Registro de Rostro"
+                        color= "#008080"
+                        onPress={() => navigation.navigate('Registro')}
+                    />
+                </View>
+                <Separator />
+                <View>
+                    <Text style={styles.title}>
+                        A traves de esta opcion su rostro puede ser detectado y reconocido, siempre y cuando este se encuentre en la BD de la app.
+                    </Text>
+                    <Button
+                        title="Reconocimiento Facial"
+                        color= "#008080"
+                        onPress={() => navigation.navigate('RostroRec')}
+                    />
+                </View>
+                <Separator />
+                <View>
+                    <Text style={styles.title}>
+                    Deteccion de diferentes gestos con la mano, descubrelos tu mismo.
+                    </Text>
+                    <Button
+                        title="Reconocimiento De Gestos"
+                        color= "#008080"
+                        onPress={() => navigation.navigate('GestoRec')}
+                    />
+                </View>
+                <Separator />
+              </ImageBackground>
 
             </ScrollView>
             
@@ -42,7 +56,7 @@ const Home = ({navigation})=> {
 }
 const styles = StyleSheet.create({
   container: {
-    paddingTop:130,
+    paddingTop:100,
     flex: 1,
     justifyContent: 'center',
     marginHorizontal: 16,

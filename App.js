@@ -7,6 +7,7 @@ import HomeScreen from './screens/Home'
 import DetailsScreen from './screens/Details'
 import RostroRecScreen from './screens/RostroRec'
 import GestoRecScreen from './screens/GestoRec'
+import RegistroScreen from './screens/Registro'
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,8 @@ const MyStack = () => {
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="RostroRec" component={RostroRecScreen} />
         <Stack.Screen name="GestoRec" component={GestoRecScreen} />
+        <Stack.Screen name="Registro" component={RegistroScreen} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
