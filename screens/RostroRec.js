@@ -48,8 +48,8 @@ class ExampleApp extends PureComponent {
             }}
             />
             <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
-            <TouchableOpacity onPress={this.takePicture.bind(this)} style={styles.capture}>
-                <Text style={{ fontSize: 14 }}> Detectar Rostro </Text>
+            <TouchableOpacity onPress={this.takePicture.bind(this)} style={styles.button}>
+                <Text style={styles.textButton}> Detectar Rostro </Text>
             </TouchableOpacity>
             </View>
         </View>
@@ -77,6 +77,30 @@ class ExampleApp extends PureComponent {
       alignSelf: 'center',
       margin: 20,
     },
+    button:{
+        flex: 0,
+        width:310,
+        height: 30,
+        alignItems: 'center',
+        alignContent:'center',
+        justifyContent:'center',
+        marginBottom:25,   
+        elevation: 8,
+        backgroundColor: "#00bfff",
+        borderRadius: 10,
+        margin: 20,
+        alignSelf: 'center',
+        
+        
+      },
+      textButton:{
+        fontSize: 16,
+        color: "#fff",
+        fontWeight: "bold",
+        alignSelf: "center",
+        textTransform: "uppercase"
+    
+      }
   });
   
 AppRegistry.registerComponent('App', () => ExampleApp);
