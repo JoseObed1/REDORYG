@@ -24,7 +24,7 @@ const Home = ({navigation})=> {
                     <TouchableOpacity                       
                         onPress={() => navigation.navigate('Registro')}
                         style={styles.button}>
-                        <Text style={styles.textButton}>Reconocimiento de Rostro</Text>  
+                        <Text style={styles.textButton}>Registro de Rostro</Text>  
                     </TouchableOpacity>
                 </View>
                 <Separator />

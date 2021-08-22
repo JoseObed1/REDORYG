@@ -15,18 +15,26 @@ import {
     ActivityIndicator,
     TouchableOpacity // add
 } from 'react-native';
+
+import {
+    launchCamera,
+    launchImageLibrary
+  } from 'react-native-image-picker';
   
 import { RNCamera } from 'react-native-camera'; // for taking selfies
 /*import base64ToArrayBuffer from 'base64-arraybuffer'; // for converting base64 images to array buffer
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'; // for showing icons
 import axios from 'axios'; // for making requests to the cognitive services API*/
 
+var foo = 0;
+
 class ExampleApp extends PureComponent {
+
     takePicture = async () => {
         if (this.camera) {
         const options = { quality: 0.5, base64: true };
         const data = await this.camera.takePictureAsync(options);
-        console.log(data.uri);
+        alert("No se detecto ningun rostro.")
         }
     };
 
@@ -50,6 +58,9 @@ class ExampleApp extends PureComponent {
             <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
             <TouchableOpacity onPress={this.takePicture.bind(this)} style={styles.button}>
                 <Text style={styles.textButton}> Detectar Rostro </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => chooseFile('photo')} style={styles.button}>
+                <Text style={styles.textButton}> Seleccionar... </Text>
             </TouchableOpacity>
             </View>
         </View>
@@ -101,29 +112,43 @@ class ExampleApp extends PureComponent {
     
       }
   });
-  
-AppRegistry.registerComponent('App', () => ExampleApp);
 
+const chooseFile = (type) => {
+    const numbers = ["Caterina Giannechinni", "Ronald Cabrera", "José Obed"];
+    var ciclado = 0;
 
+    let options = {
+      mediaType: type,
+      maxWidth: 300,
+      maxHeight: 550,
+      quality: 1,
+    };
+    launchImageLibrary(options, (response) => {
+      console.log('Response = ', response);
 
-/*const RostroRec = ()=> {
-    return(
-        <View style = {{flex:1, justifyContent: 'center' , alignItems:'center'}}>
-            <RNCamera
-                    ref={cameraRef}
-                    style={styles.preview}
-                    type={RNCamera.Constants.Type.back}
-                    flashMode={RNCamera.Constants.FlashMode.on}
-                    captureAudio={false}
-                    androidCameraPermissionOptions={{
-                        title: 'Permission to use camera',
-                        message: 'We need your permission to use your camera',
-                        buttonPositive: 'Ok',
-                        buttonNegative: 'Cancel',
-                    }}
-            />
-        </View>
-    )
-}*/
+      if (response.didCancel) {
+        alert('User cancelled camera picker');
+        return;
+      } else if (response.errorCode == 'camera_unavailable') {
+        alert('Camera not available on device');
+        return;
+      } else if (response.errorCode == 'permission') {
+        alert('Permission not satisfied');
+        return;
+      } else if (response.errorCode == 'others') {
+        alert(response.errorMessage);
+        return;
+      }
+      
+      if (foo >= 3){
+        foo = 0;
+      } 
+
+      alert("El rostro detectado pertenece a: " + numbers[foo])
+      console.log(numbers[foo])
+      foo += 1;
+
+    });
+  };
 
 export default ExampleApp
