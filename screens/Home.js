@@ -49,7 +49,13 @@ const Home = ({navigation})=> {
                         <Text style={styles.textButton}>Reconocimiento de gestos</Text>                     
                     </TouchableOpacity>
                 </View>
-                
+                <View>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('Creditos')}  
+                        style={styles.button1}>
+                        <Text style={styles.textButton1}>Creditos</Text>                     
+                    </TouchableOpacity>
+                </View>
               
 
             </ScrollView>
@@ -105,6 +111,14 @@ const styles = StyleSheet.create({
     textTransform: "uppercase"
 
   },
+  textButton1:{
+    fontSize: 16,
+    color: "#ffa500",
+    fontWeight: "bold",
+    alignSelf: "center",
+    textTransform: "uppercase"
+
+  },
   titulo:{
     color:'#fff',
     fontSize:30,
@@ -112,7 +126,14 @@ const styles = StyleSheet.create({
     paddingBottom:50,
     alignSelf: "center",
 
-  }
+  },
+  button1: {
+    borderWidth: 0,
+    color:"#ff8c00",
+    borderRadius: 0,
+    marginTop: 50,
+    justifyContent: "flex-start"
+}
   
 });
 

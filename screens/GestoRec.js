@@ -11,6 +11,7 @@ import {
     NativeModules,
     Button,
     FlatList,
+    ImageBackground,
     Alert,
     ActivityIndicator,
     TouchableOpacity} from 'react-native'
@@ -57,11 +58,14 @@ class GestoRec extends PureComponent {
                 buttonNegative: 'Cancel',
             }}
             />
+            <ImageBackground style={{flex:0}} source={{uri:'https://i.pinimg.com/originals/8c/37/60/8c3760589c87367b587a52db820e46c5.jpg'}} >
+
             <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
             <TouchableOpacity onPress={this.takePicture.bind(this)} style={styles.button}>
                 <Text style={styles.textButton}> Detectar Gesto </Text>
             </TouchableOpacity>
             </View>
+            </ImageBackground>
         </View>
         );
     }  

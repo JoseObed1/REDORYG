@@ -11,6 +11,7 @@ import {
     NativeModules,
     Button,
     FlatList,
+    ImageBackground,
     Alert,
     ActivityIndicator,
     TouchableOpacity // add
@@ -55,15 +56,20 @@ class ExampleApp extends PureComponent {
                 buttonNegative: 'Cancel',
             }}
             />
+            <ImageBackground style={{flex:0}} source={{uri:'https://i.pinimg.com/originals/8c/37/60/8c3760589c87367b587a52db820e46c5.jpg'}} >
+
             <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
             <TouchableOpacity onPress={this.takePicture.bind(this)} style={styles.button}>
                 <Text style={styles.textButton}> Detectar Rostro </Text>
             </TouchableOpacity>
+
             <TouchableOpacity onPress={() => chooseFile('photo')} style={styles.button}>
-                <Text style={styles.textButton}> Seleccionar... </Text>
+                <Text style={styles.textButton}> Seleccionar </Text>
             </TouchableOpacity>
             </View>
+            </ImageBackground>
         </View>
+        
         );
     }  
 }
@@ -90,7 +96,8 @@ class ExampleApp extends PureComponent {
     },
     button:{
         flex: 1,
-        height: 30,
+        height: 50,
+        width: 320,
         alignItems: 'center',
         alignContent:'center',
         justifyContent:'center',

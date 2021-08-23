@@ -10,9 +10,11 @@ import {
   Text,
   View,
   TouchableOpacity,
+  Separator,
   Image,
   Platform,
   PermissionsAndroid,
+  ImageBackground,
   TextInput,
 } from 'react-native';
 
@@ -110,7 +112,9 @@ const App = () => {
     }
   };
 
-  
+  const Separator = () => (
+   <View style={styles.separator} />
+);
 
   const chooseFile = (type) => {
     let options = {
@@ -154,21 +158,22 @@ const App = () => {
 
   //Parte de arriba de la ventana
   return (
+  <ImageBackground style={{flex:1}} source={{uri:'https://i.pinimg.com/originals/8c/37/60/8c3760589c87367b587a52db820e46c5.jpg'}} >
+
     <SafeAreaView style={{flex: 1}}> 
       <Text style={styles.titleText}>
-        Registrar el rostro
+        Registra tu rostro
       </Text>
       
-      <View style={styles.container}>
         <Text style={styles.textStyle}>{filePath.uri}</Text>
 
         <TextInput style={styles.textInput}  
-        placeholder="Ingrese el nombre" placeholderTextColor="#3D4849" 
+        placeholder="Ingrese el nombre" placeholderTextColor="#fff" 
         onChangeText={text => setTextInputValue(text)}
         value={textInputValue}
         >
-
         </TextInput>
+        <Separator />
 
         <TouchableOpacity
           activeOpacity={0.5}
@@ -185,8 +190,8 @@ const App = () => {
           onPress={() => chooseFile('photo')}>
           <Text style={styles.textStyle}>Seleccionar imagen</Text>
         </TouchableOpacity>
-      </View>
     </SafeAreaView>
+  </ImageBackground>
   );
 };
 
@@ -204,18 +209,28 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     paddingVertical: 20,
+    color: "#fff",
+    textTransform:"uppercase",
+
   },
   textStyle: {
-    padding: 10,
-    color: 'black',
-    textAlign: 'center',
+    fontSize: 16,
+    color: "#fff",
+    fontWeight: "bold",
+    alignSelf: "center",
+    textTransform: "uppercase"
   },
   buttonStyle: {
     alignItems: 'center',
-    backgroundColor: '#DDDDDD',
+    backgroundColor: "#00bfff",
+    borderRadius: 10,
+    elevation: 8,
     padding: 5,
+    height: 30,
+    marginBottom:15,   
+    margin: 20,
     marginVertical: 10,
-    width: 250,
+    width: 320,
   },
   imageStyle: {
     width: 200,
@@ -227,12 +242,18 @@ const styles = StyleSheet.create({
      /* Firefox */
   },
   textInput: {
-    color:"black",
-    backgroundColor: "#fff",
+    color:"#fff",
+    borderColor: "#fff",
+    backgroundColor: '#00000000',
     height: 40,
     margin: 12,
-    borderWidth: 1,
+    borderWidth: 2,
+    borderRadius: 10,
     padding: 10,
   },
+  separator: {
+    marginVertical: 8,
+  },
+
 
 });
